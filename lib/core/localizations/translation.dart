@@ -1,0 +1,156 @@
+import 'package:get/get.dart';
+
+class MyTranslation extends Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+        'en': {
+          "YourBalance": "Your Balance",
+          "Classifications": "Classifications",
+          "MostPopular": "Most Popular",
+          // BOTTOM NAVIGATION & COMMON
+          "Main": "Main",
+          "Favorite": "Favorite",
+          "MyOrders": "My Orders",
+          "list": "List",
+          // AUTH PAGES
+          "ResetPassword": "Reset Password",
+          "Register": "Register",
+          "Login": "Login",
+          "SignInTitle": "SIGN IN",
+          "SignInEmailHint": "Username",
+          "SignInPasswordHint": "Password",
+          "SignInButton": "LOGIN",
+          "SignInNoAccount": "Don't have an account? ",
+          "SignInRegisterHere": "Register Here",
+          "SignInForgotPassword": "Forgot Password?",
+          "RegisterTitle": "REGISTER",
+          "RegisterEmailHint": "Email",
+          "RegisterPasswordHint": "Password",
+          "RegisterConfirmPasswordHint": "Confirm Password",
+          "RegisterButton": "REGISTER",
+          "RegisterHaveAccount": "Already have an account? ",
+          "RegisterLoginHere": "Login Here",
+          "RegisterSuccess": "Account created! Please login.",
+          "RegisterErrorEmpty": "All fields are required",
+          "RegisterErrorMatch": "Passwords do not match",
+          "ForgotPasswordTitle": "FORGOT PASSWORD",
+          "ForgotPasswordEmailHint": "Email",
+          "ForgotPasswordButton": "SEND RESET LINK",
+          "ForgotPasswordSuccess": "If this email exists, a reset link will be sent.",
+          "ForgotPasswordRemember": "Remember your password? ",
+          "ForgotPasswordLoginHere": "Login Here",
+          "LoginErrorEmail": "Invalid email. Use test@gmail.com",
+          //LANGUAGE-PAGE
+          "LanguageHead": "Welcome",
+          "LanguageTitle": "Choose Language",
+          //ONBOARDING-PAGE
+          "OnboardingTitle1": "Track Your Metrics",
+          "OnboardingBody1":
+              "Monitor key performance indicators and data trends in real-time with Dashy.",
+          "OnboardingTitle2": "Analyze Performance",
+          "OnboardingBody2":
+              "Dive into interactive charts and analytics to uncover insights that drive growth.",
+          "OnboardingTitle3": "Get Instant Updates",
+          "OnboardingBody3":
+              "Stay informed with real-time alerts on changes, anomalies, and performance shifts.",
+          "OnboardingTitle4": "Stay Ahead with Dashy",
+          "OnboardingBody4":
+              "Leverage smart insights and personalized dashboards to stay ahead of the curve.",
+          "OnboardingButton": "Get Started",
+          //DASHBOARD-PAGE
+          "Dashboard": "Dashboard",
+          "Brands": "Brands",
+          "Transaction": "Transaction",
+          "Report": "Reports",
+          "Settings": "Settings",
+          "DashboardHeader": "Welcome Back !",
+          //ERRORHANDLING
+          "offlinefailure": "No Internet !",
+          "serverfailure": "Server Failure !",
+          "failure": "No Data Found !",
+          //VALIDATION
+          "UsernameValidate": "Not Valid Username",
+          "EmailValidate": "Not Valid Email",
+          "PasswordValidate": "Password Can't be Empty",
+          "PhoneValidate": "Phone Number Not Valid",
+          "EmptyValidate": "Field Can't Be Empty",
+          "MinValidate": "Can't Be Empty Less Than 5",
+          "MaxValidate": "Can't Be Empty More Than 100",
+        },
+        'ar': {
+          "YourBalance": "رصيدك",
+          "Classifications": "التصنيفات",
+          "MostPopular": "الأكثر طلبا",
+          // BOTTOM NAVIGATION & COMMON
+          "Main": "الرئيسية",
+          "Favorite": "المفضلة",
+          "MyOrders": "طلباتي",
+          "list": "القائمة",
+          // AUTH PAGES
+          "ResetPassword": "إعادة تعيين كلمة المرور",
+          "Register": "تسجيل حساب",
+          "Login": "تسجيل الدخول",
+          "SignInTitle": "تسجيل الدخول",
+          "SignInEmailHint": "اسم المستخدم",
+          "SignInPasswordHint": "كلمة المرور",
+          "SignInButton": "دخول",
+          "SignInNoAccount": "ليس لديك حساب؟ ",
+          "SignInRegisterHere": "سجل هنا",
+          "SignInForgotPassword": "نسيت كلمة المرور؟",
+          "RegisterTitle": "تسجيل حساب",
+          "RegisterEmailHint": "البريد الإلكتروني",
+          "RegisterPasswordHint": "كلمة المرور",
+          "RegisterConfirmPasswordHint": "تأكيد كلمة المرور",
+          "RegisterButton": "تسجيل",
+          "RegisterHaveAccount": "لديك حساب بالفعل؟ ",
+          "RegisterLoginHere": "سجل الدخول",
+          "RegisterSuccess": "تم إنشاء الحساب! الرجاء تسجيل الدخول.",
+          "RegisterErrorEmpty": "جميع الحقول مطلوبة",
+          "RegisterErrorMatch": "كلمتا المرور غير متطابقتين",
+          "ForgotPasswordTitle": "نسيت كلمة المرور",
+          "ForgotPasswordEmailHint": "البريد الإلكتروني",
+          "ForgotPasswordButton": "إرسال رابط إعادة التعيين",
+          "ForgotPasswordSuccess": "إذا كان البريد موجودًا سيتم إرسال رابط إعادة تعيين.",
+          "ForgotPasswordRemember": "تتذكر كلمة المرور؟ ",
+          "ForgotPasswordLoginHere": "سجل الدخول",
+          "LoginErrorEmail": "البريد غير صحيح. استخدم test@gmail.com",
+          //LANGUAGE-PAGE
+          "LanguageHead": "مرحبا بك",
+          "LanguageTitle": "اختر اللغة",
+          //ONBOARDING-PAGE
+          "OnboardingTitle1": "تابع مؤشراتك",
+          "OnboardingBody1":
+              "راقب مؤشرات الأداء الرئيسية والبيانات المهمة في الوقت الفعلي باستخدام Dashy.",
+          "OnboardingTitle2": "حلل الأداء",
+          "OnboardingBody2":
+              "استعرض الرسوم البيانية التفاعلية والتحليلات المتقدمة لاكتشاف رؤى تدعم قراراتك.",
+          "OnboardingTitle3": "احصل على تحديثات فورية",
+          "OnboardingBody3":
+              "ابقَ على اطلاع دائم من خلال التنبيهات الفورية حول التغيرات والمستجدات.",
+          "OnboardingTitle4": "كن دائمًا في المقدمة",
+          "OnboardingBody4":
+              "استفد من التحليلات الذكية ولوحات المعلومات المخصصة للبقاء في الصدارة.",
+          "OnboardingButton": "ابدأ الآن",
+          //DASHBOARD-PAGE
+          "Dashboard": "الرئسية ",
+          "Brands": "العلامات التجارية",
+          "Transaction": "الحركات",
+          "Report": "تقارير",
+          "Settings": "الإعدادات",
+          "DashboardHeader": "مرحبًا بك!",
+          //ERRORHANDLING
+          "offlinefailure": "لايوجد اتصال بالانترنت !",
+          "serverfailure": "لايوجد اتصال بالخادم !",
+          "failure": "لاتوجد بيانات !",
+          //VALIDATION
+          "UsernameValidate": "آسم مستخدم غير صالح",
+          "EmailValidate": "البريد المدخل غير صحيح",
+          "PasswordValidate": "كلمة السر فارغة",
+          "PhoneValidate": "الرقم غير صحيح",
+          "EmptyValidate": "الحقل لايمكن ان يكون فارغ",
+          "MinValidate": "5 لايمكن ان يكون اقل من",
+          "MaxValidate": "100 لايمكن ان يكون اكثر من",
+          
+        },
+      };
+}

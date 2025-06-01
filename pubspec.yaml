@@ -1,0 +1,88 @@
+name: SANAD_MOBILE
+description: "Dashy – Effortlessly track and manage all your cash, bank, investment, and personal debt accounts in one place"
+
+# Prevent accidental publishing to pub.dev (private project).
+publish_to: 'none'
+
+# Versioning: Initial release.
+version: 1.0.0+1
+
+# SDK constraints: Ensure compatibility with Dart 3.6.0 and above.
+
+environment:
+  sdk: ^3.6.1
+
+# Dependencies: Grouped by functionality for better readability.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI and Icons
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.17
+  flutter_launcher_icons: ^0.14.3
+  lottie: ^3.3.1
+  google_nav_bar: ^5.0.7
+  smooth_page_indicator: ^1.2.0+3
+
+  # State Management and Navigation
+  get: ^4.6.6
+
+  # Local Storage
+  shared_preferences: ^2.3.5
+
+  # Utilities
+  http: ^1.2.2
+  dartz: ^0.10.1
+  intl: ^0.17.0
+
+
+
+# Development dependencies: Used for testing and linting.
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+# Flutter-specific configuration.
+flutter:
+  uses-material-design: true
+
+# Assets: Organized into logical groups.
+  assets:
+    - assets/images/onboarding/
+    - assets/images/status/
+    - assets/icons/
+    - assets/images/classes/
+    - assets/images/brands/
+
+
+  # Fonts: Define custom fonts.
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo/Cairo-Bold.ttf
+          weight: 700
+    - family: Nova
+      fonts:
+        - asset: assets/fonts/Nova/NovaFlat-Regular.ttf
+
+# Flutter-Icon configuration.
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logo-black.png"
+  min_sdk_android: 21 
+  web:
+    generate: true
+    image_path: "assets/icons/logo-black.png"
+    background_color: "#ffffff"
+    theme_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/icons/logo-black.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/logo-black.png"
