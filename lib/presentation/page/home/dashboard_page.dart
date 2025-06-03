@@ -25,9 +25,11 @@ class DashboardPage extends StatelessWidget {
                 height: 20,
               ),
               BalanceBanner(
-                balance: "1000.00",
-                currency: "LYD",
-              ),
+              balance: "1000.00",
+              currency: "LYD",
+              localProfit: "500.00",
+              internationalProfit: "300.00",
+            ),
 
               
               Divider(

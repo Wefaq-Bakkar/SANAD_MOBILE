@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/services/service.dart';
+import '../../../domain/controllers/auth_controller.dart';
 import '../../../core/constants/route.dart';
 
 class LoginForm extends StatefulWidget {
@@ -14,24 +14,25 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final MyServices myServices = Get.find();
+  final AuthController _authController = Get.find();
   String? _error;
 
   void _login() async {
     final phone = _phoneController.text.trim();
-    // Correct regex: starts with 9, then 8 digits, total 9 digits
-    final phoneRegExp = RegExp(r'^9\d{8}$');
-    if (phoneRegExp.hasMatch(phone)) {
-      await myServices.sharedPreferences.setString('token', 'dummy_token');
+    final password = _passwordController.text;
+
+    final success = await _authController.loginWithPassword(phone, password);
+    if (success) {
       setState(() => _error = null);
       Get.offAllNamed(AppRoute.home);
     } else {
-      setState(() => _error = 'رقم الهاتف يجب أن يبدأ بـ 9 ويتكون من 9 أرقام');
+      setState(() => _error = _authController.errorMessage.value);
     }
   }
 
+
   void _goToRegister() {
-    Get.toNamed(AppRoute.register);
+    Get.toNamed(AppRoute.otpLogin);
   }
 
   void _goToForgetPassword() {
@@ -102,7 +103,7 @@ class _LoginFormState extends State<LoginForm> {
                     GestureDetector(
                       onTap: _goToRegister,
                       child: Text(
-                        'SignInRegisterHere'.tr,
+                        'OTPLogin'.tr, // Use a new translation key for OTP login
                         style: const TextStyle(
                           color: Colors.deepPurple,
                           decoration: TextDecoration.underline,

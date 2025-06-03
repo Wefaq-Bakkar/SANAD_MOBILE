@@ -1,4 +1,6 @@
 class AppRoute {
+  static const String otpLogin = "/otp-login";
+  static const String otpVerify = "/otp-verify";
   static const String favorite = "/favorite";
   static const String brands = "/brands";
 

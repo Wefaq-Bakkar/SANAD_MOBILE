@@ -1,3 +1,5 @@
+import '../presentation/page/root_page.dart';
+
 import 'package:SANAD_MOBILE/presentation/page/language_page.dart';
 import 'package:get/get.dart';
 
@@ -14,11 +16,14 @@ import '../presentation/page/auth/login_page.dart';
 import '../presentation/page/auth/register_page.dart';
 import '../presentation/page/auth/reset_password_page.dart';
 import '../presentation/page/auth/forget_password_page.dart';
+import '../presentation/page/auth/otp_login_page.dart';
+import '../presentation/page/auth/otp_verify_page.dart';
 import '../presentation/bindings/auth_binding.dart';
 
 
 
 List<GetPage<dynamic>>? routes = [
+  GetPage(name: '/', page: () => const RootPage()),
   GetPage(
       name: "/",
       page: () => const LanguagePage(),
@@ -49,4 +54,6 @@ List<GetPage<dynamic>>? routes = [
     page: () => const ForgetPasswordPage(),
     binding: AuthBinding(),
   ),
+  GetPage(name: AppRoute.otpLogin, page: () => const OtpLoginPage()),
+  GetPage(name: AppRoute.otpVerify, page: () => const OtpVerifyPage()),
 ];

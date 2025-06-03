@@ -20,10 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthController authController = Get.put(AuthController());
     final LocaleController controller = Get.put(LocaleController());
-    // Decide initial route based on login status
-    String initialRoute = authController.isLoggedIn ? '/home' : '/login';
     return GetMaterialApp(
       locale: controller.language,
       translations: MyTranslation(),
@@ -32,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: controller.appTheme,
       getPages: routes,
       initialBinding: InitialBindings(),
-      initialRoute: initialRoute,
+      initialRoute: '/',
     );
   }
 }
