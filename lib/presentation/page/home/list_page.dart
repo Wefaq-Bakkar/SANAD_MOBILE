@@ -37,7 +37,9 @@ class ListPage extends StatelessWidget {
             title: items[i].title,
             icon: items[i].icon,
             onTap: () async {
-              if (items[i].title == 'تسجيل الخروج') {
+              if (items[i].title == 'الحساب الشخصي') {
+                Navigator.of(context).pushNamed('/profile');
+              } else if (items[i].title == 'تسجيل الخروج') {
                 // Simple logout: clear SharedPreferences and go to login
                 final prefs = await SharedPreferences.getInstance();
                 await prefs.clear();

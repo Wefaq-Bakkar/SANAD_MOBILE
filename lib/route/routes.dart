@@ -1,3 +1,5 @@
+import '../presentation/page/profile/profile_page.dart';
+
 import '../presentation/page/root_page.dart';
 
 import 'package:SANAD_MOBILE/presentation/page/language_page.dart';
@@ -10,6 +12,7 @@ import '../presentation/page/home/home_page.dart';
 import '../presentation/page/list_page/list_page.dart';
 import '../presentation/page/home/favorite_page.dart';
 import '../presentation/page/brands/brands_page.dart';
+import '../presentation/page/home/profit_page.dart';
 import '../presentation/page/onboarding_page.dart';
 import '../presentation/page/coming_soon_page.dart';
 import '../presentation/page/auth/login_page.dart';
@@ -56,4 +59,12 @@ List<GetPage<dynamic>>? routes = [
   ),
   GetPage(name: AppRoute.otpLogin, page: () => const OtpLoginPage()),
   GetPage(name: AppRoute.otpVerify, page: () => const OtpVerifyPage()),
+  GetPage(
+    name: AppRoute.profile,
+    page: () => const ProfilePage(),
+  ),
+  GetPage(
+    name: AppRoute.profit,
+    page: () => const ProfitPage(),
+  ),
 ];

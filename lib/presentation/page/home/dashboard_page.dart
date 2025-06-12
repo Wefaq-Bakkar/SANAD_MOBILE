@@ -7,6 +7,7 @@ import '../../widget/home/dashboard/header/balance_banner.dart';
 
 
 
+
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
   @override
@@ -24,12 +25,35 @@ class DashboardPage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              BalanceBanner(
-              balance: "1000.00",
-              currency: "LYD",
-              localProfit: "500.00",
-              internationalProfit: "300.00",
-            ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: IntrinsicHeight(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: BalanceBanner(
+                          label: "YourBalance".tr,
+                          balance: "1000.00",
+                          currency: "د.ل",
+                          onTap: () {},
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: BalanceBanner(
+                          label: "ProfitWallet".tr,
+                          balance: "400.00",
+                          currency: "د.ل",
+                          onTap: () {
+                            Get.toNamed('/profit');
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
 
               
               Divider(

@@ -7,7 +7,7 @@ import 'core/localizations/changelocal.dart';
 import 'core/services/service.dart';
 import 'presentation/bindings/intialbindings.dart';
 import 'route/routes.dart';
-import 'domain/controllers/auth_controller.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

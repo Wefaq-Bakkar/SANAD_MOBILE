@@ -1,4 +1,6 @@
+
 class AppRoute {
+  static const String profit = "/profit";
   static const String otpLogin = "/otp-login";
   static const String otpVerify = "/otp-verify";
   static const String favorite = "/favorite";
@@ -18,5 +20,6 @@ class AppRoute {
   static const String register = "/register";
   static const String resetPassword = "/reset-password";
   static const String forgetPassword = "/forget-password";
+  static const String profile = "/profile";
 
 }

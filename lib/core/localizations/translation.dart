@@ -4,6 +4,23 @@ class MyTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
+          // PROFIT PAGE BUTTONS
+          "UseProfitToBuyCards": "Use profit to buy cards",
+          "WithdrawProfit": "Withdraw profit",
+          // PROFIT PAGE
+          "ProfitWallet": "Profit Wallet",
+          "ProfitPageTitle": "Profit Wallet",
+          "ProfitPageDescription": "Coming soon: Detailed profit analytics and history.",
+          // PROFILE PAGE
+          "EditProfile": "Edit Profile",
+          "Name": "Name",
+          "Email": "Email",
+          "Phone": "Phone",
+          "Address": "Address",
+          "OldPassword": "Old Password",
+          "NewPassword": "New Password",
+          "Cancel": "Cancel",
+          "SaveUpdate": "Save Update",
           "YourBalance": "Your Balance",
           "Classifications": "Classifications",
           "MostPopular": "Most Popular",
@@ -88,6 +105,23 @@ class MyTranslation extends Translations {
           "MaxValidate": "Can't Be Empty More Than 100",
         },
         'ar': {
+          // PROFIT PAGE BUTTONS
+          "UseProfitToBuyCards": "استخدم الأرباح لشراء بطاقات",
+          "WithdrawProfit": "سحب الأرباح",
+          // PROFIT PAGE
+          "ProfitWallet": "حافظة الأرباح",
+          "ProfitPageTitle": "حافظة الأرباح",
+          "ProfitPageDescription": "قريباً: تحليلات الأرباح والتفاصيل الكاملة.",
+          // PROFILE PAGE
+          "EditProfile": "تعديل الملف الشخصي",
+          "Name": "الاسم",
+          "Email": "البريد الإلكتروني",
+          "Phone": "رقم الجوال",
+          "Address": "العنوان",
+          "OldPassword": "كلمة المرور القديمة",
+          "NewPassword": "كلمة المرور الجديدة",
+          "Cancel": "إلغاء",
+          "SaveUpdate": "حفظ التعديلات",
           "YourBalance": "رصيدك",
           "Classifications": "التصنيفات",
           "MostPopular": "الأكثر طلبا",

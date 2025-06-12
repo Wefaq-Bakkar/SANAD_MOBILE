@@ -5,6 +5,11 @@ import '../../data/models/user_model.dart';
 import '../../core/services/service.dart';
 
 class AuthController extends GetxController {
+  @override
+  void onInit() {
+    super.onInit();
+    token.value = myServices.sharedPreferences.getString('token') ?? '';
+  }
   final MyServices myServices = Get.find();
   Rxn<UserModel> user = Rxn<UserModel>();
   RxString token = ''.obs;
@@ -85,7 +90,9 @@ class AuthController extends GetxController {
   Future<void> getProfile() async {
     isLoading.value = true;
     errorMessage.value = '';
+    print('Sending getProfile request with token: $token');
     final response = await AuthApi.getProfile(token.value);
+    print('getProfile response: ${response.body}');
     final data = jsonDecode(response.body);
     isLoading.value = false;
     if (data['success'] == true) {
