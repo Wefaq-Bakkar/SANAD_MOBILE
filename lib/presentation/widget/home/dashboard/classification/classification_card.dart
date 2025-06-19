@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 
 class ClassificationCard extends StatelessWidget {
   final String imageUrl;
-  final String title;
-  final String subtitle;
+  final String name;
   final VoidCallback? onTap;
 
   const ClassificationCard({
     Key? key,
     required this.imageUrl,
-    required this.title,
-    required this.subtitle,
+    required this.name,
     this.onTap,
   }) : super(key: key);
 
@@ -63,18 +61,10 @@ class ClassificationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    name,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    subtitle,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.black54,
                     ),
                   ),
                 ],

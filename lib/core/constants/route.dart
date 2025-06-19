@@ -1,5 +1,8 @@
 
 class AppRoute {
+  static const String productCards = "/product-cards";
+  static const String categories = "/categories";
+  static const String subcategories = "/subcategories";
   static const String profit = "/profit";
   static const String otpLogin = "/otp-login";
   static const String otpVerify = "/otp-verify";

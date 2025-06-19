@@ -1,3 +1,5 @@
+import '../presentation/page/product_card/product_details_page.dart';
+import '../presentation/page/product_card/product_card_list_page.dart';
 import '../presentation/page/profile/profile_page.dart';
 
 import '../presentation/page/root_page.dart';
@@ -12,6 +14,8 @@ import '../presentation/page/home/home_page.dart';
 import '../presentation/page/list_page/list_page.dart';
 import '../presentation/page/home/favorite_page.dart';
 import '../presentation/page/brands/brands_page.dart';
+import '../presentation/page/categories/categories_page.dart';
+import '../presentation/page/subcategories/subcategories_page.dart';
 import '../presentation/page/home/profit_page.dart';
 import '../presentation/page/onboarding_page.dart';
 import '../presentation/page/coming_soon_page.dart';
@@ -26,6 +30,14 @@ import '../presentation/bindings/auth_binding.dart';
 
 
 List<GetPage<dynamic>>? routes = [
+  GetPage(
+    name: '/product-details',
+    page: () => const ProductDetailsPage(),
+  ),
+  GetPage(
+    name: AppRoute.productCards,
+    page: () => const ProductCardListPage(),
+  ),
   GetPage(name: '/', page: () => const RootPage()),
   GetPage(
       name: "/",
@@ -36,6 +48,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.comingSoon, page: () => const ComingSoonPage()),
   GetPage(name: AppRoute.listPage, page: () => const ListPage()),
   GetPage(name: AppRoute.favorite, page: () => const FavoritePage()),
+  GetPage(name: AppRoute.categories, page: () => const CategoriesPage()),
+  GetPage(name: AppRoute.subcategories, page: () => const SubcategoriesPage()),
   GetPage(name: AppRoute.brands, page: () => const BrandsPage()),
   GetPage(
     name: AppRoute.login,

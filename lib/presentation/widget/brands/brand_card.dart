@@ -27,12 +27,18 @@ class BrandCard extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.contain,
-                ),
-              ),
+  padding: const EdgeInsets.all(8.0),
+  child: image.startsWith('assets/')
+      ? Image.asset(image, fit: BoxFit.contain)
+      : Image.network(
+          image,
+          fit: BoxFit.contain,
+          errorBuilder: (context, error, stackTrace) => Container(
+            color: Colors.grey[200],
+            child: const Icon(Icons.image, color: Colors.grey),
+          ),
+        ),
+),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4),

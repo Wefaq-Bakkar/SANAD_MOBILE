@@ -55,7 +55,9 @@ class DashboardPage extends StatelessWidget {
                 ),
               ),
 
-              
+              SizedBox(
+                height: 20,
+              ),
               Divider(
                 indent: 30,
                 endIndent: 30,

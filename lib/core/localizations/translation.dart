@@ -4,6 +4,8 @@ class MyTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
+          "AddToCart": "Add To Cart",
+          "View": "View",
           // PROFIT PAGE BUTTONS
           "UseProfitToBuyCards": "Use profit to buy cards",
           "WithdrawProfit": "Withdraw profit",
@@ -103,8 +105,11 @@ class MyTranslation extends Translations {
           "EmptyValidate": "Field Can't Be Empty",
           "MinValidate": "Can't Be Empty Less Than 5",
           "MaxValidate": "Can't Be Empty More Than 100",
+          
         },
         'ar': {
+          "AddToCart": "أضف إلى السلة",
+          "View": "عرض",
           // PROFIT PAGE BUTTONS
           "UseProfitToBuyCards": "استخدم الأرباح لشراء بطاقات",
           "WithdrawProfit": "سحب الأرباح",

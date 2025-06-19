@@ -1,47 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../widget/brands/brands.dart';
+import '../../../domain/controllers/brand_controller.dart';
+import 'package:SANAD_MOBILE/core/functions/functions.dart';
 
 class BrandsPage extends StatelessWidget {
-  const BrandsPage({super.key});
+  const BrandsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final classification = Get.arguments;
-    // Demo: only first classification (id = '1') has brands
-    final String? classificationId = classification is Map && classification.containsKey('id')
-        ? classification['id']
-        : null;
+    final args = Get.arguments as Map<String, dynamic>?;
+    final int? categoryId = args != null && args.containsKey('categoryId') ? args['categoryId'] : null;
+    final int? subcategoryId = args != null && args.containsKey('subcategoryId') ? args['subcategoryId'] : null;
+    final String name = args != null && args['name'] != null ? args['name'] : 'Brands'.tr;
+    final brandController = Get.put(BrandController());
 
-    final List<Map<String, String>> brandsData = [
-      {
-        'classificationId': '1',
-        'name': 'اكسجين ',
-        'image': 'assets/images/brands/images-2.jpeg',
-      },
-      {
-        'classificationId': '1',
-        'name': 'كونكت ',
-        'image': 'assets/images/brands/images-3.png',
-      },
-      {
-        'classificationId': '1',
-        'name': 'الريادة ',
-        'image': 'assets/images/brands/images-4.png',
-      },
-    ];
-
-    final filteredBrands = brandsData.where((b) => b['classificationId'] == classificationId).toList();
+    // Fetch brands when the page is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (brandController.brands.isEmpty && !brandController.isLoading.value) {
+        if (subcategoryId != null) {
+          brandController.fetchBrandsBySubcategory(subcategoryId);
+        } else if (categoryId != null) {
+          brandController.fetchBrandsByCategory(categoryId);
+        }
+      }
+    });
 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(classification['title'] ?? 'Brands'.tr),
+        title: Text(name),
         backgroundColor: Colors.white,
       ),
-      body: filteredBrands.isEmpty
-          ? const Center(child: Text('لا توجد نتائج'))
-          : Brands(brands: filteredBrands),
+      body: Obx(() {
+        if (brandController.isLoading.value) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (brandController.errorMessage.isNotEmpty) {
+          return Center(child: Text(brandController.errorMessage.value));
+        }
+        final brands = brandController.brands;
+        if (brands.isEmpty) {
+          return const Center(child: Text('لا توجد نتائج'));
+        }
+        return Brands(
+          brands: brands.map((b) => {
+            'id': b.id.toString(),
+            'name': b.name,
+            'image':getFullImageUrl(b.logoFile?.path?? ''),
+          }).toList(),
+          onBrandTap: (brandName) {
+            final brand = brands.firstWhere((b) => b.name == brandName);
+            Get.toNamed('/product-cards', arguments: {'brandId': brand.id, 'name': brand.name});
+          },
+        );
+      }),
     );
   }
 }
